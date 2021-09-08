@@ -2,7 +2,7 @@
 SET @inserttime=0;
 SET @Rusrnamr="";
 
-*/triggers gia to job*/
+/*triggers gia to job*/
 drop trigger if exists job_insert_before ;
 DELIMITER //
 CREATE TRIGGER job_insert_before BEFORE INSERT ON `job`
@@ -65,7 +65,7 @@ DELIMITER ;
 
 
 
-*/triggers gia to employee*/
+/*triggers gia to employee*/
 drop trigger if exists employee_insert_before ;
 DELIMITER //
 CREATE TRIGGER employee_insert_before BEFORE INSERT ON employee
@@ -130,7 +130,7 @@ DELIMITER ;
 
 
 
-*/triggers gia to requestsevaluation*/
+/*triggers gia to requestsevaluation*/
 drop trigger if exists requestsevaluation_insert_before;
 DELIMITER //
 CREATE TRIGGER requestsevaluation_insert_before BEFORE INSERT ON requestsevaluation
@@ -159,8 +159,7 @@ CREATE TRIGGER requestsevaluation_update_before BEFORE UPDATE ON requestsevaluat
 FOR EACH ROW
 BEGIN
 SET @insertTime=NOW();
-insert into log(log_id, username, log_date, success, 'type', 'table_name')
-values( NULL, new.empl_usrname, NOW(), 0, "Update", 'requestsevaluation');
+insert into log values( NULL, new.empl_usrname, NOW(), 0, "Update", 'requestsevaluation');
 END //
 DELIMITER;
 
@@ -180,8 +179,7 @@ CREATE TRIGGER requestsevaluation_delete_before BEFORE DELETE ON requestsevaluat
 FOR EACH ROW
 BEGIN
 SET @insertTime=NOW();
-insert into log(log_id, username, log_date, success, 'type', 'table_name')
-values (NULL, new.empl_usrname, NOW(), 0, "Delete", 'requestsevaluation');
+insert into log values (NULL, old.empl_usrname, NOW(), 0, "Delete", 'requestsevaluation');
 END //
 DELIMITER ;
 
@@ -197,7 +195,7 @@ DELIMITER ;
 
 
 
-*/trigger gia thn etaireia*/
+/*trigger gia thn etaireia*/
 drop trigger if exists company_update_before ;
  DELIMITER //
  CREATE TRIGGER company_update_before BEFORE UPDATE ON `company`
@@ -222,4 +220,8 @@ BEGIN
 UPDATE log set success =  1 WHERE log_date =@insertTime;
 END //
 DELIMITER ;
+
+
+
+
 
