@@ -69,8 +69,8 @@ PRIMARY KEY (username)
 INSERT INTO user(username,password,name,surname,reg_date,email) VALUES
 
 /*managers*/
-('dimhatz2','Password1234','Dimitris','Hatzis','2016-02-13 12:23:34','dimitrishatzis@hotmail.com'),
-('stavros28','uPdOwN2828','Stavros','Georgakopoulos','2018-03-18 17:00:02','georgakopStav@gmail.com'),
+('dimhatz2','Pass1234','Dimitris','Hatzis','2016-02-13 12:23:34','dimitrishatzis@hotmail.com'),
+('stavros28','uP2828','Stavros','Georgakopoulos','2018-03-18 17:00:02','georgakopStav@gmail.com'),
 ('zoepap','iL1keD0gs','Zoe','Papadopoulou','2017-08-30 10:19:46','zoepap@yahoo.com'),
 ('eirinivas3','my22Pass','Eirini','Vasilopoulou','2017-10-08 11:17:15','vasilop@hotmail.com'),
 ('despathan','@than209','Despoina','Athanasiou','2015-12-03 14:06:09','athandesp@hotmail.com'),
@@ -81,7 +81,7 @@ INSERT INTO user(username,password,name,surname,reg_date,email) VALUES
 ('liakoumar', 'Lionpass', 'Maria', 'Liakou', '2018-05-22 17:03:01', 'mliak@dotweb.gr'),
 ('Giankost', 'jUn38@', 'Giannis', 'Kostoglou', '2018-02-23 11:08:15', 'kostog@webmasters.gr'),
 ('paraskevi', 'julyOf79', 'Paraskevi', 'Papaparaskeva', '2017-02-25 11:23:45', 'parpapapar@codeworks.gr'),
-('panagTak', 'varethikaThnDouleia', 'Panagiotis', 'Takidis', '2019-04-28 15:20:25', 'panag20@networks.gr'),
+('panagTak', 'varethika', 'Panagiotis', 'Takidis', '2019-04-28 15:20:25', 'panag20@networks.gr'),
 ('KatiaNik', 'abC123', 'Katerina', 'Nikou', '2020-01-28 10:13:48', 'katianik@unigo.com'),
 
 /*employees*/
@@ -90,7 +90,7 @@ INSERT INTO user(username,password,name,surname,reg_date,email) VALUES
 ('daliaCh', 'we3wd', 'Ntalia', 'Xatzialexandrou', '2017-06-23 13:12:34', 'ntaliachatz@yahoo.com'),
 ('spairous', 'gotop@s$', 'Spiridon', 'Deloglou', '2018-12-03 18:12:39', 'deloglou@yahoo.com'),
 ('fotakos', 'jUn38@', 'Fotios', 'Voulinos', '2017-04-12 12:23:10', 'fotisvoul@hotmail.gr'),
-('angieioak', 'pdfr45t', 'Aggeliki', 'Ioakeimidou', '2018-11-17 23:10:08', 'angioak@gmail.gr')
+('angieioak', 'pdfr45t', 'Aggeliki', 'Ioakeimidou', '2018-11-17 23:10:08', 'angioak@gmail.gr'),
 
 /*Admin*/
 ('admin', '12345', 'Theopoula', 'Tzini', '2021-01-25 11:23:45', 'theopoula@parapente.gr');
@@ -274,7 +274,7 @@ insert into job (start_date, salary, position, edra, evaluator, announce_date, s
 ('2021-05-01', 1850, 'web and mobile app programmer', 'Athina, Greece','mnikol', '2020-11-20', '2021-04-12'),
 ('2021-05-01', 1600, 'graphics expert', 'Athina, Greece','mnikol', '2020-11-20', '2021-04-12'),
 ('2021-05-01', 1850, 'DB expert', 'Athina, Greece','paraskevi', '2020-11-20', '2021-04-12'),
-('2021-04-01', 2100, 'AI expert', 'Patra, Greece', 'paraskevi', '2020-11-21', '2021-03-10')
+('2021-04-01', 2100, 'AI expert', 'Patra, Greece', 'paraskevi', '2020-11-21', '2021-03-10'),
 ('2021-02-01', 2600, 'Algorithmic efficiency expert', 'Athina, Greece', 'liakoumar', '2020-11-01', '2021-01-16'),
 ('2021-03-01', 2800, 'web and media programmer', 'Athina, Greece', 'liakoumar', '2020-11-01', '2020-01-03'),
 ('2021-02-01', 2000, 'data analyst', 'Athina, Greece', 'liakoumar', '2020-07-13', '2020-12-20');
@@ -434,7 +434,7 @@ CONSTRAINT APPLY_EMPL FOREIGN KEY (emp_usrname) REFERENCES employee(username) ON
 )engine=InnoDB;
 
 
-INSERT INTO submitapplication() VALUES(
+INSERT INTO submitapplication() VALUES
 ('eleni23', 2, 'app.pdf'),
 ('eleni23',7,'myaplic.pdf'),
 ('angieioak', 2, 'ioak.pdf'),
@@ -445,8 +445,7 @@ INSERT INTO submitapplication() VALUES(
 ('spairous',6, 'spyros.pdf'),
 ('daliaCh',11, 'chatzial.docx'),
 ('fotakos', 1, 'fotis.docx'),
-('fotakos', 9, 'myapplication.pdf')
-);
+('fotakos', 9, 'myapplication.pdf');
 
 /*-------------------------------------- EPIPLEON PINAKAS MEROS A.3 ------------------------------------------------------*/
 
@@ -461,6 +460,4 @@ CREATE TABLE log (
   CONSTRAINT USR_LOG FOREIGN KEY (username) REFERENCES `user` (username) ON DELETE NO ACTION ON UPDATE CASCADE
   
 ) ENGINE=InnoDB;
-
-
 
